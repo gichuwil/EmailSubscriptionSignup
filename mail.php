@@ -1,9 +1,10 @@
 <?php
 
-$email = $_POST['email'];
+$email = trim($_POST['email'], "~`:'|\|<>?/,*=+!#$%^&() ");
+// Adding stripslashes code on the above line. Important.
 
 // Send email to mailing list
-$adminemail = 'ADD_YOUR_MAILING_LIST_EMAIL_HERE';
+$adminemail = 'mailing-list-email@example.com';
 $adminsubject = 'Add Email: ' .$email;
 $adminmessage = 'Email: ' .$email;
 mail($adminemail, $adminsubject, $adminmessage);
@@ -12,7 +13,7 @@ mail($adminemail, $adminsubject, $adminmessage);
 
 // Send to the email specified
 $subject = 'Thank you for Subscribing.';
-$headers = 'From: No-Reply <ADD_YOUR_'SENT_FROM'_EMAIL_HERE>' ."\r\n" .'Reply-To: DCKS Mail <ADD_YOUR_REPLY_TO_EMAIL_HERE>' ."\r\n" .'Content-type: text/html; charset=UTF-8\n';
+$headers = 'From: No-Reply <no-reply@example.com>' ."\r\n" .'Reply-To: <reply-to@example.com>' ."\r\n" .'Content-type: text/html; charset=UTF-8\n';
 $message = '
 <html>
 <head></head>
@@ -22,7 +23,7 @@ $message = '
 </body>
 </html>
 ';
-mail($email, $subject, $message, $headers, '-fADD_YOUR_'SENT_FROM'_EMAIL_HERE');
+mail($email, $subject, $message, $headers, '-fno-reply@example.com');
 
 ?>
 
