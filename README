@@ -1,0 +1,26 @@
+Manual Email Subscription with confirmation email
+-------------------------------------------------
+
+I cam up with this when i wanted to have a simple mailing list for my website. It was my first step to get new emails so that i would send HTML emails to my subscribers. I set it up in a few hours, so it doesn't have more database scripts for now.
+
+I am a PHP/JAVASCRIPT intermediate coder, but a very good designer. In the process of learning MySQL and PostgreSQL.
+
+
+HOW IT WORKS
+------------
+When a clients clicks on a subscribe button on a page, it quickly shows up the subscribe form, which has the email field for simplicity. When the email is validated with simple JQUERY, the mail.php is triggered using AJAX call from the fx.js file. It sends the email to the mailing list email ['ADD_YOUR_MAILING_LIST_EMAIL_HERE' from mail.php] you want to create - i use Roundcube mail client to send my HTML emails and a subcriber base manually, since i wanted something fast.
+
+After sending the email to the subscriber mailing list email, it sends another email to the subscriber saying thank you. The notable thing with this email is that it sends a HTML email, with customized sender and reply-to emails, which can be edited, but must be valid in your server email address list.
+
+The fx.js has a timeout of 5 seconds, which can be edited in the fx.js file.
+
+
+FUTURE WORKS
+-------------
+In the future I will add the subscriber base to a database as soon as the subscriber clicks the subscribe button. It will be a simple database query language to add...its just that i am in the learning process. Feel free to add the code to the repo. i will be glad if you made this  easier for me.
+
+And after that, i can add a tool to send HTML emails without the need for Roundcube...though i love Roundcube, unless there is another email client like it i don't know of.
+
+License
+-------
+This is just simple code. You can do whatever you want with it.
